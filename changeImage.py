@@ -19,5 +19,5 @@ for root, dirs, files in os.walk(img_dir):
         im = Image.open(image_path)
 
         # Convert input image, and save.
-        im.convert("RGB").resize(size)
-        im.save(image_path)
+        new_filetype = os.path.join(img_dir, file + convert_type)
+        im.convert("RGB").resize(size).save(new_filetype)
