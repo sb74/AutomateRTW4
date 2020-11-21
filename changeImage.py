@@ -20,4 +20,6 @@ for root, dirs, files in os.walk(img_dir):
 
         # Convert input image, and save.
         new_filetype = os.path.join(img_dir, file + convert_type)
-        im.convert("RGB").resize(size).save(new_filetype)
+        im.convert("RGB")
+        im.resize(size)
+        im.save(new_filetype)
