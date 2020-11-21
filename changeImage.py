@@ -11,15 +11,19 @@ convert_type = ".jpeg"
 home = os.path.expanduser("~")
 # Image directory.
 img_dir = home + r"/supplier-data/images"
+img_dir_list = os.listdir(img_dir)
 
-for root, dirs, files in os.walk(img_dir):
-    for file in files:
-        # Create image object.
-        image_path = os.path.join(img_dir, file)
-        im = Image.open(image_path)
-
-        # Convert input image, and save.
-        new_filetype = os.path.join(img_dir, file + convert_type)
-        im.convert("RGB")
-        im.resize(size)
-        im.save(new_filetype)
+for img in img_dir_list:
+    if "tiff" in img:
+        # Get filename only.
+        img_name = os.path.splitext(img)[0]
+        print(img_name)
+        # Set new filetype path.
+        new_filetype = os.path.join(img_dir, img_name + convert_type)
+        print(new_filetype)
+        # Process and save image.
+        try:
+            print(img_dir + "/" + img)
+            Image.open(img_dir + "/" + img).convert("RGB").resize(size).save(new_filetype, "JPEG")
+        except IOError:
+            print("Cannot convert image.", img)
