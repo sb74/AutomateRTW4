@@ -17,10 +17,9 @@ for img in img_dir_list:
     if "tiff" in img:
         # Get filename only.
         img_name = os.path.splitext(img)[0]
-        print(img_name)
         # Set new filetype path.
         new_filetype = os.path.join(img_dir, img_name + convert_type)
-        print(new_filetype)
+
         # Process and save image.
         try:
             print(img_dir + "/" + img)
