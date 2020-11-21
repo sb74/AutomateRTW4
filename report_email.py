@@ -34,5 +34,5 @@ if __name__ == "__main__":
     subject = "Upload Completed - Online Fruit Store"
 
     # Send pdf via email as attachment.
-    message = generate_email(sender, receiver, subject, body, "/tmp/cars.pdf")
+    message = generate_email(sender, receiver, subject, body, "/tmp/processed.pdf")
     send_email(message)

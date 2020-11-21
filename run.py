@@ -20,7 +20,7 @@ def create_json(content, filename):
 
 if __name__ == "__main__":
     # External IP.
-    external_ip = "35.222.174.222"
+    external_ip = "34.123.52.57"
 
     # Linux home directory.
     home = os.path.expanduser("~")
